@@ -1,0 +1,43 @@
+[project]
+name = "scopeforge-backend"
+version = "0.1.0"
+description = "ScopeForge - tested permissions for AI agents (backend)"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "fastapi>=0.115,<0.120",
+    "uvicorn[standard]>=0.32,<0.40",
+    "pydantic>=2.9,<3",
+    "pydantic-settings>=2.5,<3",
+    "sqlalchemy>=2.0.35,<2.1",
+    "python-dotenv>=1.0,<2",
+    "faker>=30.0",
+    "openai>=1.54,<3",
+    "httpx>=0.27,<1",
+    "sse-starlette>=2.1,<4",
+    "weave>=0.51",
+    "mcp>=1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "anyio>=4.6",
+]
+notebook = [
+    "marimo>=0.9",
+    "altair>=5.4",
+    "pandas>=2.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+filterwarnings = ["ignore::DeprecationWarning"]

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1",
+  "name": "Permissive baseline (measurement only)",
+  "description": "Every tool allowed, no ownership conditions, no response-field restrictions. This policy intentionally violates the business contract inside the synthetic sandbox so that exposure can be measured before any restriction is applied. It is not eligible for activation in the playground.",
+  "default_effect": "deny",
+  "rules": [
+    {
+      "id": "allow_all_tools",
+      "description": "Baseline measurement: allow every registered tool unconditionally.",
+      "effect": "allow",
+      "tools": ["get_order", "list_orders", "get_customer", "issue_refund", "export_customers"],
+      "reason_code": "BASELINE_ALLOW_ALL"
+    }
+  ]
+}

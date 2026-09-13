@@ -1,0 +1,33 @@
+# runtime artifacts
+backend/data/runtime/
+*.db
+*.db-journal
+*.sqlite3
+.env
+.env.local
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# weave/wandb local
+wandb/
+.weave/
+
+# exports
+exports/
+
+# playwright
+frontend/test-results/
+frontend/playwright-report/
+
+# build info
+frontend/tsconfig.tsbuildinfo
